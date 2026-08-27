@@ -70,24 +70,3 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 } else {
   cards.forEach((card) => card.classList.add('visible'));
 }
-
-const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-const sections = [...sectionLinks]
-  .map((link) => document.querySelector(link.getAttribute('href')))
-  .filter(Boolean);
-
-const updateNavigation = () => {
-  const marker = window.scrollY + 180;
-  let current = sections[0]?.id;
-
-  sections.forEach((section) => {
-    if (section.offsetTop <= marker) current = section.id;
-  });
-
-  sectionLinks.forEach((link) => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-  });
-};
-
-window.addEventListener('scroll', updateNavigation, { passive: true });
-updateNavigation();
