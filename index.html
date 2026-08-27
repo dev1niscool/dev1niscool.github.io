@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef4ff" />
+    <meta
+      name="description"
+      content="A collection of live tools, data explorers, and web experiments by Devin Kancherla."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dev1niscool.github.io/" />
+    <meta property="og:title" content="Devin Kancherla — Selected Work" />
+    <meta
+      property="og:description"
+      content="Practical tools, data explorers, and small web experiments—designed and built for the open web."
+    />
+    <meta property="og:image" content="https://dev1niscool.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Devin Kancherla — Selected Work" />
+    <meta
+      name="twitter:description"
+      content="Practical tools, data explorers, and small web experiments—designed and built for the open web."
+    />
+    <meta name="twitter:image" content="https://dev1niscool.github.io/og.png" />
+    <title>Devin Kancherla — Selected Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#work">Skip to projects</a>
+
+    <div class="ambient" aria-hidden="true">
+      <span class="orb orb-one"></span>
+      <span class="orb orb-two"></span>
+      <span class="orb orb-three"></span>
+      <span class="noise"></span>
+    </div>
+
+    <header class="site-header glass" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Devin Kancherla, home">
+        <span class="brand-mark">DK</span>
+        <span class="brand-name">Devin Kancherla</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Page sections">
+        <a class="active" href="#work">Work</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a
+        class="github-link"
+        href="https://github.com/dev1niscool"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class="gh-mark" aria-hidden="true">GH</span>
+        <span>GitHub</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          Portfolio · 2026
+        </div>
+        <h1 id="hero-title" class="reveal reveal-delay-1">
+          Things I’ve built<br />
+          <span class="serif-italic">for the web.</span>
+        </h1>
+        <p class="hero-copy reveal reveal-delay-2">
+          A collection of practical tools, data explorers, and small experiments—
+          designed to make complicated things feel a little simpler.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a class="button button-primary" href="#work">
+            Explore projects
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a
+            class="button button-glass"
+            href="https://github.com/dev1niscool"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-meta reveal reveal-delay-3" aria-label="Portfolio summary">
+          <div><strong>05</strong><span>Live projects</span></div>
+          <div><strong>100%</strong><span>Open source</span></div>
+          <div><strong>Web</strong><span>Built to be useful</span></div>
+        </div>
+      </section>
+
+      <section class="projects-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Selected work</p>
+            <h2 id="work-title">Live on the web</h2>
+          </div>
+          <p>Every project below is open, public, and ready to explore.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card glass reveal-card project-featured">
+            <a
+              class="project-preview preview-glp"
+              href="https://dev1niscool.github.io/glp1concentration/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open GLP-1 Concentration Plotter"
+            >
+              <div class="preview-window">
+                <div class="window-bar"><span></span><span></span><span></span></div>
+                <div class="chart-panel">
+                  <div class="chart-heading"><b>Concentration</b><small>28 days</small></div>
+                  <div class="chart-area" aria-hidden="true">
+                    <span class="grid-line line-a"></span>
+                    <span class="grid-line line-b"></span>
+                    <canvas class="chart-canvas" aria-hidden="true"></canvas>
+                    <span class="chart-tooltip"><b>4.2</b><small>mg/L</small></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-number">01</div>
+              <div class="project-copy">
+                <div class="project-title-line">
+                  <h3>GLP-1 Concentration Plotter</h3>
+                  <a class="arrow-link" href="https://dev1niscool.github.io/glp1concentration/" target="_blank" rel="noreferrer" aria-label="Visit GLP-1 Concentration Plotter">↗</a>
+                </div>
+                <p>Visualize semaglutide, tirzepatide, and compounded-dose concentration patterns over time.</p>
+                <div class="tag-list"><span>Health data</span><span>Interactive</span><span>TypeScript</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal-card">
+            <a
+              class="project-preview preview-football"
+              href="https://dev1niscool.github.io/fanterfootbah-treasurer/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open FanterFootbah Treasurer"
+            >
+              <div class="score-panel">
+                <div class="score-top"><span>League treasury</span><b>2026</b></div>
+                <strong>$2,480</strong>
+                <small>Total collected</small>
+                <div class="meter"><span></span></div>
+                <div class="mini-rows"><i></i><i></i><i></i></div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-number">02</div>
+              <div class="project-copy">
+                <div class="project-title-line">
+                  <h3>FanterFootbah Treasurer</h3>
+                  <a class="arrow-link" href="https://dev1niscool.github.io/fanterfootbah-treasurer/" target="_blank" rel="noreferrer" aria-label="Visit FanterFootbah Treasurer">↗</a>
+                </div>
+                <p>A live treasurer dashboard for keeping a fantasy football league’s money clear and accountable.</p>
+                <div class="tag-list"><span>Dashboard</span><span>Finance</span><span>JavaScript</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal-card">
+            <a
+              class="project-preview preview-idr"
+              href="https://dev1niscool.github.io/idr-arbitration-tool/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open IDR Arbitration Tool"
+            >
+              <div class="decision-panel">
+                <div class="decision-head"><span>Offer analysis</span><small>CASE 0198</small></div>
+                <div class="decision-value"><b>74%</b><span>Decision confidence</span></div>
+                <div class="decision-bars"><i style="--bar: 84%"></i><i style="--bar: 61%"></i><i style="--bar: 42%"></i></div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-number">03</div>
+              <div class="project-copy">
+                <div class="project-title-line">
+                  <h3>IDR Arbitration Tool</h3>
+                  <a class="arrow-link" href="https://dev1niscool.github.io/idr-arbitration-tool/" target="_blank" rel="noreferrer" aria-label="Visit IDR Arbitration Tool">↗</a>
+                </div>
+                <p>A decision-support console for exploring federal IDR outcomes and offer strategy.</p>
+                <div class="tag-list"><span>Decision support</span><span>CMS data</span><span>TypeScript</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal-card">
+            <a
+              class="project-preview preview-atlas"
+              href="https://dev1niscool.github.io/glp1-evidence-atlas/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open GLP-1 Evidence Atlas"
+            >
+              <div class="atlas-panel">
+                <span class="atlas-label">Evidence map</span>
+                <div class="node node-one">S</div><div class="node node-two">T</div><div class="node node-three">R</div><div class="node node-four"></div>
+                <i class="connector connector-one"></i><i class="connector connector-two"></i><i class="connector connector-three"></i>
+                <div class="atlas-legend"><span></span>Human trials <span></span>Preclinical</div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-number">04</div>
+              <div class="project-copy">
+                <div class="project-title-line">
+                  <h3>GLP-1 Evidence Atlas</h3>
+                  <a class="arrow-link" href="https://dev1niscool.github.io/glp1-evidence-atlas/" target="_blank" rel="noreferrer" aria-label="Visit GLP-1 Evidence Atlas">↗</a>
+                </div>
+                <p>A source-first guide to the evidence behind semaglutide, tirzepatide, and retatrutide.</p>
+                <div class="tag-list"><span>Research</span><span>Evidence</span><span>JavaScript</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal-card project-wide">
+            <a
+              class="project-preview preview-instagram"
+              href="https://dev1niscool.github.io/InstaUnfollowerChecker/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Instagram Unfollower Checker"
+            >
+              <div class="follow-panel">
+                <div class="follow-heading"><span>Connections</span><b>Compare</b></div>
+                <div class="profile-row"><i>AB</i><span><b>alex.b</b><small>Follows you</small></span><em>✓</em></div>
+                <div class="profile-row"><i>MK</i><span><b>mika.k</b><small>Not following back</small></span><em class="minus">−</em></div>
+                <div class="profile-row"><i>JL</i><span><b>jamie.l</b><small>Follows you</small></span><em>✓</em></div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-number">05</div>
+              <div class="project-copy">
+                <div class="project-title-line">
+                  <h3>Instagram Unfollower Checker</h3>
+                  <a class="arrow-link" href="https://dev1niscool.github.io/InstaUnfollowerChecker/" target="_blank" rel="noreferrer" aria-label="Visit Instagram Unfollower Checker">↗</a>
+                </div>
+                <p>A private, browser-based JSON checker for quickly finding accounts that don’t follow you back.</p>
+                <div class="tag-list"><span>Utility</span><span>Privacy-first</span><span>HTML</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section glass" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="section-kicker">A little context</p>
+          <h2 id="about-title">Useful beats flashy.<br /><span class="serif-italic">Clear beats clever.</span></h2>
+        </div>
+        <div class="about-copy">
+          <p>I like turning specific questions into focused tools. These projects span healthcare, research, finance, and everyday utilities, but they share the same goal: make the answer easier to see.</p>
+          <a href="https://github.com/dev1niscool?tab=repositories" target="_blank" rel="noreferrer">Browse all repositories <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark">DK</span><span>Devin Kancherla</span></a>
+      <p>Designed and built for the open web.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
