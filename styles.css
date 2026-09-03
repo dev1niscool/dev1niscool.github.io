@@ -107,6 +107,27 @@ main, footer { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 .tag-list { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag-list span { padding: 6px 9px; border: 1px solid rgba(75,87,132,.11); border-radius: 8px; color: #7a8298; background: rgba(255,255,255,.36); font-size: 10px; font-weight: 700; letter-spacing: .025em; }
 
+.preview-scanner { background: radial-gradient(circle at 82% 12%, rgba(51, 182, 190, .38), transparent 34%), linear-gradient(145deg, #182b35, #12212b); }
+.scanner-panel { width: 82%; max-width: 378px; padding: 20px; border-radius: 18px; color: white; background: rgba(225,249,251,.08); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 24px 54px rgba(5,21,28,.36); backdrop-filter: blur(15px); transform: rotate(-1deg); }
+.scanner-head { display: flex; align-items: center; justify-content: space-between; font-size: 11px; }
+.scanner-head span { display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing: .04em; }
+.scanner-head span i { width: 8px; height: 8px; border-radius: 3px; background: #65d2ca; box-shadow: 0 0 0 4px rgba(101,210,202,.1); }
+.scanner-head b { padding: 5px 8px; border-radius: 7px; color: #92e3dc; background: rgba(101,210,202,.1); font-size: 9px; }
+.scanner-input { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 18px; padding: 11px 12px; border-radius: 9px; background: rgba(255,255,255,.07); color: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; }
+.scanner-input span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scanner-input i { flex: 0 0 auto; width: 7px; height: 7px; border-radius: 50%; background: #65d2ca; }
+.scanner-progress { height: 5px; margin: 12px 0 16px; border-radius: 5px; background: rgba(255,255,255,.08); overflow: hidden; }
+.scanner-progress span { display: block; width: 72%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #56bfb9, #8be0d8); }
+.scanner-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.scanner-results div { padding: 9px; border-radius: 9px; background: rgba(255,255,255,.06); }
+.scanner-results small { display: block; color: rgba(255,255,255,.42); font-size: 9px; }
+.scanner-results strong { display: block; margin-top: 4px; font-family: "Manrope", sans-serif; font-size: 17px; letter-spacing: -.04em; }
+.scanner-results div:first-child strong { color: #7bddc9; }
+.scanner-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 13px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.08); font-size: 9px; }
+.scanner-status span { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.58); }
+.scanner-status span i { width: 6px; height: 6px; border-radius: 50%; background: #6dd7c4; }
+.scanner-status b { color: #8ddfd7; font-size: 9px; }
+
 .preview-autonomic { background: radial-gradient(circle at 84% 15%, rgba(207, 186, 255, .78), transparent 34%), linear-gradient(145deg, #e9e1fb, #d8e6fa); }
 .pupil-panel { width: 80%; max-width: 370px; padding: 20px; border-radius: 18px; background: rgba(255,255,255,.68); border: 1px solid rgba(255,255,255,.84); box-shadow: 0 23px 52px rgba(76,68,130,.17); transform: rotate(-1deg); }
 .pupil-head { display: flex; align-items: center; justify-content: space-between; color: #78758f; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -184,7 +205,7 @@ main, footer { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 .connector { position: absolute; z-index: 1; height: 1px; transform-origin: left center; background: rgba(88,79,141,.28); }.connector-one { width: 106px; top: 96px; left: 82px; transform: rotate(20deg); }.connector-two { width: 112px; top: 113px; left: 187px; transform: rotate(-27deg); }.connector-three { width: 76px; top: 137px; left: 190px; transform: rotate(18deg); }
 .atlas-legend { position: absolute; left: 19px; bottom: 15px; display: flex; align-items: center; gap: 5px; color: #8a829c; font-size: 7px; }.atlas-legend span { width: 5px; height: 5px; margin-left: 8px; border-radius: 50%; background: #6f75d2; }.atlas-legend span:nth-child(2) { background: #5db5ae; }
 
-.preview-instagram { min-height: 355px; background: radial-gradient(circle at 10% 10%, #ffd5e6, transparent 34%), radial-gradient(circle at 90% 90%, #c6d7ff, transparent 38%), linear-gradient(145deg, #f0d8ec, #dcdcf8); }
+.preview-instagram { min-height: 308px; background: radial-gradient(circle at 10% 10%, #ffd5e6, transparent 34%), radial-gradient(circle at 90% 90%, #c6d7ff, transparent 38%), linear-gradient(145deg, #f0d8ec, #dcdcf8); }
 .follow-panel { width: 72%; max-width: 380px; padding: 21px; border-radius: 19px; background: rgba(255,255,255,.68); border: 1px solid rgba(255,255,255,.82); box-shadow: 0 24px 50px rgba(91,67,121,.17); transform: rotate(-1deg); }
 .follow-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; color: #6d6b80; font-size: 10px; font-weight: 700; }.follow-heading b { padding: 6px 9px; border-radius: 7px; color: white; background: #8969c7; font-size: 8px; }
 .profile-row { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 9px; padding: 9px 0; border-top: 1px solid rgba(76,73,108,.08); }.profile-row > i { display: grid; place-items: center; width: 29px; height: 29px; border-radius: 9px; color: white; background: linear-gradient(145deg, #d189b7, #8876cf); font-size: 7px; font-style: normal; }.profile-row span { display: flex; flex-direction: column; }.profile-row b { font-size: 9px; }.profile-row small { margin-top: 2px; color: #9a95a6; font-size: 7px; }.profile-row em { color: #49a58b; font-size: 11px; font-style: normal; }.profile-row em.minus { color: #cf7084; }
@@ -214,6 +235,7 @@ footer > a:last-child { font-weight: 700; color: #5b6382; }
   .pupil-gauge::before { width: 68px; height: 68px; }
   .pupil-gauge span { width: 36px; height: 36px; }
   .market-panel { width: 88%; }
+  .scanner-panel { width: 88%; padding: 17px; }
   .follow-panel { width: 82%; }
   footer { min-height: 145px; flex-wrap: wrap; padding: 25px 0; }
   footer > p { order: 3; flex-basis: 100%; margin: 0; }
