@@ -1,0 +1,19 @@
+{
+  "name": "Devin Kancherla — Selected Work",
+  "short_name": "Devin Kancherla",
+  "icons": [
+    {
+      "src": "./devin-headshot-192.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./devin-headshot-512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#eef4ff",
+  "background_color": "#eef4ff",
+  "display": "standalone"
+}
