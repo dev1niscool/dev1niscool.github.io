@@ -1,19 +1,22 @@
+# Host policy: preserve portfolio access and restrict individual projects.
+# M2 Mogger is blocked except HTML needed for search-engine noindex discovery.
 User-agent: *
 Disallow: /glp1concentration/
 Disallow: /glp1concentration$
 Disallow: /glp1concentration?
 Allow: /
+Disallow: /m2-mogger$
+Disallow: /m2-mogger?
+Disallow: /m2-mogger/
 
 # The GLP-1 site's owner requests no automated crawling or reuse.
 # Keep exclusions scoped to this project; the portfolio and other projects
 # retain their normal crawl behavior. Specific groups do not inherit * rules.
-User-agent: Googlebot
 User-agent: Googlebot-Image
 User-agent: Googlebot-Video
 User-agent: AdsBot-Google
 User-agent: AdsBot-Google-Mobile
 User-agent: Google-Extended
-User-agent: bingbot
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: OAI-AdsBot
@@ -26,5 +29,24 @@ Disallow: /glp1concentration/
 Disallow: /glp1concentration$
 Disallow: /glp1concentration?
 Allow: /
+Disallow: /m2-mogger$
+Disallow: /m2-mogger?
+Disallow: /m2-mogger/
+
+# M2 Mogger: allow Google/Bing to read noindex on HTML only.
+# Preserve every existing GLP-1 exclusion for these agents.
+User-agent: Googlebot
+User-agent: bingbot
+Disallow: /glp1concentration/
+Disallow: /glp1concentration$
+Disallow: /glp1concentration?
+Allow: /
+Disallow: /m2-mogger/
+Allow: /m2-mogger/$
+Allow: /m2-mogger/?
+Allow: /m2-mogger/index.html$
+Allow: /m2-mogger/index.html?
+Allow: /m2-mogger/admin.html$
+Allow: /m2-mogger/admin.html?
 
 Sitemap: https://dev1niscool.github.io/sitemap.xml
