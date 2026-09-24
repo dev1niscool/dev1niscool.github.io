@@ -107,6 +107,13 @@ main, footer { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 .tag-list { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag-list span { padding: 6px 9px; border: 1px solid rgba(75,87,132,.11); border-radius: 8px; color: #7a8298; background: rgba(255,255,255,.36); font-size: 10px; font-weight: 700; letter-spacing: .025em; }
 
+.preview-stremio { background: radial-gradient(circle at 86% 12%, rgba(198,243,107,.2), transparent 34%), linear-gradient(145deg, #20271f, #101310); }
+.stremio-panel { width: 82%; max-width: 378px; padding: 20px; border: 1px solid rgba(198,243,107,.18); border-radius: 18px; color: #f0f3ed; background: rgba(25,30,25,.9); box-shadow: 0 24px 54px rgba(7,12,7,.38); transform: rotate(-1deg); }
+.stremio-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 13px; border-bottom: 1px solid rgba(198,243,107,.15); font-size: 8px; font-weight: 700; letter-spacing: .09em; }.stremio-head span { color: #a7b2a3; }.stremio-head span b { color: #c6f36b; }.stremio-head small { padding: 5px 8px; border-radius: 7px; color: #c6f36b; background: rgba(198,243,107,.08); font-size: 7px; letter-spacing: .04em; }
+.stremio-title { margin: 18px 0 16px; font-family: "Manrope", sans-serif; font-size: 25px; font-weight: 600; line-height: 1.08; letter-spacing: -.055em; }
+.stremio-flow { display: flex; align-items: center; gap: 7px; padding: 10px 11px; border: 1px solid #343d32; border-radius: 8px; color: #a7b2a3; background: #141814; font-size: 8px; white-space: nowrap; }.stremio-flow i { color: #677063; font-style: normal; }.stremio-flow b { color: #c6f36b; }
+.stremio-guide { display: flex; align-items: center; justify-content: space-between; gap: 9px; margin-top: 13px; color: #a7b2a3; font-size: 8px; }.stremio-guide span { display: flex; align-items: center; gap: 6px; }.stremio-guide span i { width: 7px; height: 7px; border-radius: 3px; background: #c6f36b; box-shadow: 0 0 0 4px rgba(198,243,107,.08); }.stremio-guide b { padding: 8px 10px; border-radius: 7px; color: #182111; background: #c6f36b; font-size: 8px; }
+
 .preview-clearpage { background: radial-gradient(circle at 84% 14%, rgba(178,213,255,.8), transparent 36%), linear-gradient(145deg, #e9f1ff, #d9e6f8); }
 .clearpage-panel { width: 82%; max-width: 375px; padding: 20px; border: 1px solid rgba(255,255,255,.9); border-radius: 18px; color: #273958; background: rgba(255,255,255,.72); box-shadow: 0 24px 52px rgba(63,91,142,.18); transform: rotate(-1deg); }
 .clearpage-toolbar { display: flex; align-items: center; gap: 9px; padding-bottom: 13px; border-bottom: 1px solid rgba(57,85,129,.1); font-size: 10px; }
@@ -252,7 +259,7 @@ footer > a:last-child { font-weight: 700; color: #5b6382; }
   .pupil-gauge::before { width: 68px; height: 68px; }
   .pupil-gauge span { width: 36px; height: 36px; }
   .market-panel { width: 88%; }
-  .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
+  .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
   .scanner-panel { width: 88%; padding: 17px; }
   .follow-panel { width: 82%; }
   footer { min-height: 145px; flex-wrap: wrap; padding: 25px 0; }
