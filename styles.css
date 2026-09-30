@@ -107,6 +107,16 @@ main, footer { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 .tag-list { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag-list span { padding: 6px 9px; border: 1px solid rgba(75,87,132,.11); border-radius: 8px; color: #7a8298; background: rgba(255,255,255,.36); font-size: 10px; font-weight: 700; letter-spacing: .025em; }
 
+.preview-mri { background: radial-gradient(circle at 85% 12%, rgba(167,218,200,.26), transparent 34%), radial-gradient(circle at 10% 90%, rgba(200,117,149,.2), transparent 38%), linear-gradient(145deg, #20344d, #111d2f); }
+.mri-panel { width: 82%; max-width: 378px; padding: 18px 19px; border: 1px solid rgba(157,187,210,.18); border-radius: 19px; color: #e5edf8; background: rgba(24,39,59,.82); box-shadow: 0 24px 54px rgba(3,9,16,.38), inset 0 1px 0 rgba(157,187,210,.1); backdrop-filter: blur(15px); transform: rotate(1deg); }
+.mri-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(114,148,185,.18); font-size: 9px; }.mri-head > span { display: flex; align-items: center; color: #e5edf8; font-size: 11px; font-weight: 700; letter-spacing: -.025em; }.mri-head > span i { margin-right: 6px; color: #a7dac8; font-style: normal; }.mri-head > span b { color: #a9b9cf; font-weight: 400; }.mri-head small { color: #a9b9cf; font-size: 7px; font-weight: 600; letter-spacing: .06em; }
+.mri-body { display: grid; grid-template-columns: 112px minmax(0,1fr); align-items: center; gap: 17px; margin: 15px 0; }
+.mri-scan { position: relative; width: 108px; height: 108px; display: grid; place-items: center; border: 1px solid rgba(167,218,200,.24); border-radius: 50%; background: radial-gradient(circle, #263b53 0 52%, #132238 53% 69%, #293e55 70% 72%, #101a2b 73%); box-shadow: inset 0 0 23px rgba(1,7,15,.5), 0 9px 24px rgba(1,7,15,.28); overflow: hidden; }
+.mri-scan span { width: 62px; height: 76px; border: 1px solid rgba(237,178,199,.58); border-radius: 48% 52% 45% 47%; background: radial-gradient(circle at 36% 34%, rgba(249,220,230,.82) 0 7%, transparent 8%), radial-gradient(circle at 62% 42%, rgba(237,178,199,.72) 0 12%, transparent 13%), radial-gradient(circle at 43% 67%, rgba(167,218,200,.48) 0 16%, transparent 17%), rgba(200,117,149,.27); box-shadow: inset 9px 0 18px rgba(237,178,199,.18), inset -8px 0 15px rgba(167,218,200,.14); }
+.mri-scan i, .mri-scan b { position: absolute; display: block; background: rgba(167,218,200,.34); }.mri-scan i { left: 7px; right: 7px; top: 53px; height: 1px; }.mri-scan b { top: 7px; bottom: 7px; left: 53px; width: 1px; }
+.mri-summary { min-width: 0; }.mri-summary small { display: block; color: #a7dac8; font-size: 7px; font-weight: 700; letter-spacing: .11em; }.mri-summary strong { display: block; margin: 5px 0 6px; font-family: "Manrope", sans-serif; font-size: 20px; line-height: 1.05; letter-spacing: -.055em; }.mri-summary > span { display: block; color: #a9b9cf; font-size: 8px; }.mri-summary em { display: inline-block; margin-top: 11px; padding: 5px 7px; border: 1px solid rgba(114,148,185,.18); border-radius: 7px; color: #a9b9cf; background: rgba(21,35,56,.62); font-size: 7px; font-style: normal; }
+.mri-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 12px; border-top: 1px solid rgba(114,148,185,.18); color: #a9b9cf; font-size: 8px; }.mri-footer b { color: #a7dac8; font-size: 8px; }
+
 .preview-stremio { background: radial-gradient(circle at 86% 12%, rgba(198,243,107,.2), transparent 34%), linear-gradient(145deg, #20271f, #101310); }
 .stremio-panel { width: 82%; max-width: 378px; padding: 20px; border: 1px solid rgba(198,243,107,.18); border-radius: 18px; color: #f0f3ed; background: rgba(25,30,25,.9); box-shadow: 0 24px 54px rgba(7,12,7,.38); transform: rotate(-1deg); }
 .stremio-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 13px; border-bottom: 1px solid rgba(198,243,107,.15); font-size: 8px; font-weight: 700; letter-spacing: .09em; }.stremio-head span { color: #a7b2a3; }.stremio-head span b { color: #c6f36b; }.stremio-head small { padding: 5px 8px; border-radius: 7px; color: #c6f36b; background: rgba(198,243,107,.08); font-size: 7px; letter-spacing: .04em; }
@@ -259,7 +269,9 @@ footer > a:last-child { font-weight: 700; color: #5b6382; }
   .pupil-gauge::before { width: 68px; height: 68px; }
   .pupil-gauge span { width: 36px; height: 36px; }
   .market-panel { width: 88%; }
-  .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
+  .mri-panel, .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
+  .mri-body { grid-template-columns: 100px minmax(0,1fr); gap: 12px; }
+  .mri-scan { width: 96px; height: 96px; }.mri-scan i { top: 47px; }.mri-scan b { left: 47px; }
   .scanner-panel { width: 88%; padding: 17px; }
   .follow-panel { width: 82%; }
   footer { min-height: 145px; flex-wrap: wrap; padding: 25px 0; }
