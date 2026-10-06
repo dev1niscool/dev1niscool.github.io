@@ -39,7 +39,7 @@ node scripts/build-data.mjs
 npm test
 ```
 
-Confidence labels distinguish historical matches from likely reconstructions. A historical match does not imply that every port call is independently verified as actually visited. Notes identify scheduled itineraries, known changes, and remaining uncertainty. The owner confirmed that the August 2008 Disney Magic cruise departed Los Angeles, resolving the original Bahamas mismatch. The full length of the June 2022 Regal Princess trip is still uncertain; the map explicitly shows a documented candidate segment and leaves the personal trip dates and duration unconfirmed.
+Confidence labels distinguish historical matches from likely reconstructions. A historical match does not imply that every port call is independently verified as actually visited. Notes identify scheduled itineraries, known changes, and remaining uncertainty. The owner clarified that the August 2008 cruise was Disney Wonder in the Bahamas. The June 2022 Regal Princess trip was confirmed as the seven-day voyage, matching the June 11–18 Barcelona-to-Civitavecchia schedule.
 
 Map routes are **illustrative**, using port connections and some offshore waypoints. They are not recorded ship tracks or suitable for navigation. Ports, scenic cruising locations, and candidate segments should not be interpreted as independently verified personal visits.
 

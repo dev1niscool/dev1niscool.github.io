@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const records = [
   ['2005-05-19', 'Disney Wonder', 'Disney Cruise Line', 'Bahamas', [-77.4, 25.2]],
   ['2007-02-03', 'Disney Magic', 'Disney Cruise Line', 'Eastern Caribbean', [-65.7, 19.3]],
-  ['2008-08-10', 'Disney Magic', 'Disney Cruise Line', 'Bahamas', [-113, 26]],
+  ['2008-08-10', 'Disney Wonder', 'Disney Cruise Line', 'Bahamas', [-77.4, 25.2]],
   ['2009-03-15', 'Carnival Triumph', 'Carnival Cruise Line', 'Eastern Caribbean', [-65.7, 19.3]],
   ['2009-08-08', 'Carnival Fascination', 'Carnival Cruise Line', 'Bahamas', [-77.4, 25.2]],
   ['2010-01-23', 'Carnival Liberty', 'Carnival Cruise Line', 'Exotic Eastern Caribbean', [-65.7, 19.3]],

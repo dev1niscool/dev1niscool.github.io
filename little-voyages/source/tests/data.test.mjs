@@ -61,12 +61,19 @@ test('researched routes are sourced, geographic, and retain every ordered port',
 
 test('clarified and revised itineraries retain their research distinctions', () => {
   const byId = id => cruises.find(cruise => cruise.id === id);
-  assert.equal(byId(3).region, 'Mexican Riviera');
+  assert.equal(byId(3).ship, 'Disney Wonder');
+  assert.equal(byId(3).region, 'Bahamas');
   assert.equal(byId(3).originalRegion, 'Bahamas');
-  assert.equal(byId(3).ports[0].name, 'Los Angeles (San Pedro)');
-  assert.equal(byId(25).nights, null, 'a candidate segment must not become a confirmed full voyage duration');
+  assert.equal(byId(3).ports[0].name, 'Port Canaveral');
+  assert.equal(byId(3).nights, 4);
+  assert.equal(byId(3).endDate, '2008-08-14');
+  assert.deepEqual(byId(3).ports.map(port => port.name), ['Port Canaveral', 'Castaway Cay', 'Nassau', 'Castaway Cay', 'Port Canaveral']);
+  assert.equal(byId(25).nights, 7, 'owner confirmed the seven-day sailing');
+  assert.equal(byId(25).startDate, '2022-06-11');
+  assert.equal(byId(25).endDate, '2022-06-18');
   assert.equal(byId(25).region, 'Mediterranean');
-  assert.equal(byId(25).candidateStartDate, '2022-06-11');
+  assert.equal(byId(25).candidateStartDate, undefined);
+  assert.equal(byId(25).confidence, 'confirmed');
   assert.equal(byId(21).originalShip, 'NCL Sky');
   assert.equal(byId(24).originalShip, 'Carnival Mardi Gras 2.0');
   assert.equal(byId(26).originalShip, 'NCL Bliss');

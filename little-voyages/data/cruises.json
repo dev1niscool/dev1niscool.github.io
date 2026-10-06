@@ -200,128 +200,89 @@
     "id": 3,
     "originalDate": "2008-08-10",
     "startDate": "2008-08-10",
-    "endDate": "2008-08-17",
-    "nights": 7,
-    "ship": "Disney Magic",
+    "endDate": "2008-08-14",
+    "nights": 4,
+    "ship": "Disney Wonder",
     "line": "Disney Cruise Line",
-    "region": "Mexican Riviera",
+    "region": "Bahamas",
     "originalRegion": "Bahamas",
     "year": 2008,
     "ports": [
       {
-        "name": "Los Angeles (San Pedro)",
-        "lat": 33.7441,
-        "lon": -118.277,
+        "name": "Port Canaveral",
+        "lat": 28.4103,
+        "lon": -80.6188,
         "country": "United States"
       },
       {
-        "name": "Cabo San Lucas",
-        "lat": 22.8808,
-        "lon": -109.9126,
-        "country": "Mexico"
+        "name": "Castaway Cay",
+        "lat": 26.0843,
+        "lon": -77.5334,
+        "country": "Bahamas"
       },
       {
-        "name": "Mazatlán",
-        "lat": 23.186,
-        "lon": -106.4102,
-        "country": "Mexico"
+        "name": "Nassau",
+        "lat": 25.0838,
+        "lon": -77.3386,
+        "country": "Bahamas"
       },
       {
-        "name": "Puerto Vallarta",
-        "lat": 20.6581,
-        "lon": -105.241,
-        "country": "Mexico"
+        "name": "Castaway Cay",
+        "lat": 26.0843,
+        "lon": -77.5334,
+        "country": "Bahamas"
       },
       {
-        "name": "Los Angeles (San Pedro)",
-        "lat": 33.7441,
-        "lon": -118.277,
+        "name": "Port Canaveral",
+        "lat": 28.4103,
+        "lon": -80.6188,
         "country": "United States"
       }
     ],
     "anchor": [
-      -113,
-      26
+      -77.4,
+      25.2
     ],
     "confidence": "confirmed",
-    "notes": "You confirmed that the August 2008 cruise was from Los Angeles. Disney's published itinerary lists the August 10 departure as seven nights to the Mexican Riviera: Los Angeles, Cabo San Lucas, Mazatlán, Puerto Vallarta, and back to Los Angeles on August 17. The original Bahamas label is preserved in the research record. Individual weather-related changes have not been verified.",
+    "notes": "You clarified that this was Disney Wonder in the Bahamas. A contemporary roll call identifies the August 10, 2008 four-night Wonder sailing. Disney’s published summer 2008 schedule confirms the double visit to Castaway Cay: depart Port Canaveral Sunday August 10, Castaway Cay Monday August 11, Nassau Tuesday August 12, Castaway Cay Wednesday August 13, and return Thursday August 14. The itinerary is the historical published schedule; any unrecorded operational changes have not been independently verified.",
     "sources": [
       {
-        "title": "DISboards: Disney's announced 2008 itineraries",
-        "url": "https://www.disboards.com/threads/hot-off-the-press-2008-info.1329040/",
-        "note": "Reproduces Disney's January 2007 announcement; post 15 explicitly lists August 10, 2008 among the seven-night departures, with Sunday Los Angeles, Tuesday Cabo San Lucas, Wednesday Mazatlán, Thursday Puerto Vallarta, and Sunday Los Angeles. Applied to this departure, the calls fall August 10, 12, 13, 14 and 17."
+        "title": "DISboards: Wonder Aug. 10, 2008 — 4 Night",
+        "url": "https://www.disboards.com/threads/wonder-aug-10-2008-4-night.1849941/",
+        "note": "Contemporary passenger roll call identifies Disney Wonder’s August 10, 2008 four-night sailing."
       },
       {
-        "title": "Disney D23: Disney Magic history",
-        "url": "https://d23.com/a-to-z/disney-magic/",
-        "note": "Disney's own historical entry independently confirms Magic returned to the West Coast in summer 2008."
+        "title": "Cruise Industry News: Disney Cruise Line announces future itineraries",
+        "url": "https://cruiseindustrynews.com/cruise-news/2007/12/12407-disney-cruise-line-announces-future-itineraries/",
+        "note": "Contemporary announcement: four-night Wonder sailings May 11–August 24, 2008 follow Port Canaveral, Castaway Cay, Nassau, Castaway Cay, Port Canaveral."
+      },
+      {
+        "title": "DISboards: 4-night double-dip schedule",
+        "url": "https://www.disboards.com/threads/4-night-dd-question.1343251/",
+        "note": "Reproduces the summer 2008 departure list, including August 10, and the Sunday-to-Thursday port order."
       }
     ],
     "color": "#bd9455",
     "route": [
       [
-        -118.277,
-        33.7441
+        -80.6188,
+        28.4103
       ],
       [
-        -119,
-        32
+        -77.5334,
+        26.0843
       ],
       [
-        -117.3,
-        29
+        -77.3386,
+        25.0838
       ],
       [
-        -115,
-        26
+        -77.5334,
+        26.0843
       ],
       [
-        -112.5,
-        24
-      ],
-      [
-        -110.8,
-        22.5
-      ],
-      [
-        -109.9126,
-        22.8808
-      ],
-      [
-        -106.4102,
-        23.186
-      ],
-      [
-        -105.241,
-        20.6581
-      ],
-      [
-        -106.1,
-        20.9
-      ],
-      [
-        -109.9,
-        22.4
-      ],
-      [
-        -112.5,
-        24
-      ],
-      [
-        -115,
-        26
-      ],
-      [
-        -117.3,
-        29
-      ],
-      [
-        -119,
-        32
-      ],
-      [
-        -118.277,
-        33.7441
+        -80.6188,
+        28.4103
       ]
     ]
   },
@@ -3267,9 +3228,9 @@
   {
     "id": 25,
     "originalDate": "2022-06-16",
-    "startDate": null,
-    "endDate": null,
-    "nights": null,
+    "startDate": "2022-06-11",
+    "endDate": "2022-06-18",
+    "nights": 7,
     "ship": "Regal Princess",
     "line": "Princess Cruises",
     "region": "Mediterranean",
@@ -3317,18 +3278,13 @@
       17.3,
       36.8
     ],
-    "confidence": "likely",
-    "notes": "June 16 was a Genoa port day, not a regular departure. The mapped route is the documented June 11–18 Barcelona-to-Rome segment containing that date: Gibraltar June 13, Marseille June 15, Genoa June 16, Livorno June 17, Civitavecchia June 18. The same segment was sold in longer 14- and 21-night combinations, so your actual embarkation, disembarkation and full duration remain unresolved. Route is a candidate segment, not a claim that you sailed only seven nights.",
+    "confidence": "confirmed",
+    "notes": "You confirmed this was the seven-day Regal Princess cruise. The historical schedule containing your June 16 date matches the June 11–18, 2022 Barcelona-to-Civitavecchia (Rome) sailing, seven nights: Gibraltar June 13, Marseille June 15, Genoa June 16, Livorno June 17, and Civitavecchia June 18. June 16 was the Genoa port day. The archived longer itinerary includes this same first week; your confirmed duration identifies the seven-night voyage.",
     "sources": [
       {
         "title": "Regal Princess June 11, 2022 archived Mediterranean itinerary",
         "url": "https://www.icruise.com/itineraries/14-night-mediterranean-with-greek-isles-france-and-turkey-cruise_regal-princess_6-11-2022.html",
-        "note": "Exact June 16 Genoa call within the June 11–18 Barcelona–Rome segment; longer booking continues to Athens June 25."
-      },
-      {
-        "title": "Regal Princess May 28, 2022 three-week itinerary",
-        "url": "https://www.icruise.com/itineraries/21-night-the-best-of-the-mediterranean-cruise_regal-princess_5-28-2022.html",
-        "note": "Another sold combination includes the anchor date; explains why duration cannot be established from June 16 alone."
+        "note": "Historical schedule for June 11–18: Barcelona, Gibraltar, Marseille, Genoa, Livorno and Civitavecchia. Published as the first week of a longer itinerary; the owner confirms sailing the seven-day voyage."
       }
     ],
     "color": "#9a87b5",
@@ -3417,10 +3373,7 @@
         11.7878,
         42.0954
       ]
-    ],
-    "candidateStartDate": "2022-06-11",
-    "candidateEndDate": "2022-06-18",
-    "candidateNights": 7
+    ]
   },
   {
     "id": 26,
