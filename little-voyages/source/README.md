@@ -8,6 +8,8 @@ An illustrated, interactive atlas of 29 personal cruises, from 2005 to 2025.
 - Illustrated routes and port labels, with smooth focus on a selected voyage
 - Year timeline, ship/port search, cruise-line filter, and chronological playback
 - Dates, duration, itinerary, historical research notes, and source links for every voyage
+- A statistics page with cruise duration, estimated sailing distance, Earth-distance equivalents, repeat ports, cruise-line breakdowns, and clickable year charts
+- Colorful glass panels, a persistent light/dark switch, and animated SVG sea creatures
 - Responsive desktop and mobile layout; keyboard ship controls and reduced-motion support
 - Downloadable JSON logbook; bundled map geometry and fonts; no map API key, trackers, or backend
 
@@ -26,6 +28,14 @@ npm run build
 npm run preview
 ```
 
+Run the browser smoke checks against a local preview or the published site (requires Chromium):
+
+```sh
+ATLAS_URL=http://localhost:4173/little-voyages/ node scripts/check-browser.mjs
+```
+
+Set `CHROMIUM_EXECUTABLE_PATH` if Chromium is installed somewhere other than `/usr/bin/chromium`.
+
 The atlas lives in the existing `dev1niscool.github.io` repository: `little-voyages/` holds the published site and `little-voyages/source/` holds this source project. GitHub Pages serves the `main` branch. To prepare updated files from this source folder, run `npm run build` followed by `npm run stage`, review the changes, and commit the `little-voyages/` directory. Staging copies only the build output into the parent folder and does not touch the portfolio homepage.
 
 ## Historical research
@@ -42,6 +52,18 @@ npm test
 Confidence labels distinguish historical matches from likely reconstructions. A historical match does not imply that every port call is independently verified as actually visited. Notes identify scheduled itineraries, known changes, and remaining uncertainty. The owner clarified that the August 2008 cruise was Disney Wonder in the Bahamas. The June 2022 Regal Princess trip was confirmed as the seven-day voyage, matching the June 11–18 Barcelona-to-Civitavecchia schedule.
 
 Map routes are **illustrative**, using port connections and some offshore waypoints. They are not recorded ship tracks or suitable for navigation. Ports, scenic cruising locations, and candidate segments should not be interpreted as independently verified personal visits.
+
+## Statistics and appearance
+
+Open the **Statistics** tab or share https://dev1niscool.github.io/little-voyages/?view=statistics.
+
+`src/statistics-data.js` calculates the statistics directly from the corrected itinerary collection. Recorded nights are used as full-day equivalents; hours are nights × 24, including time ashore. These are trip-duration estimates, not a measurement of time physically aboard or underway. Distance is the sum of great-circle segments along the atlas’s schematic routes, so it is approximate rather than GPS mileage. Earth equivalents use the equatorial circumference of 40,075.017 km. The page offers statute miles, nautical miles, and kilometres, with the same underlying distance.
+
+Port counts exclude scenic cruising stops and omit the repeated final homeport on round trips, while preserving meaningful repeat calls such as Disney Wonder’s two visits to Castaway Cay in 2008. Countries and territories are counted separately. The on-page calculation notes explain these definitions and the inherited historical itinerary uncertainty.
+
+The theme follows your system preference initially. The dark-mode switch saves an explicit choice in browser-local storage. Motion follows reduced-motion preferences and can also be turned off from the header.
+
+Design references: [Flighty Passport](https://flighty.com/help/passport), [Polarsteps Travel Tracker](https://www.polarsteps.com/travel-tracker), and [Apple’s materials guidance](https://developer.apple.com/design/human-interface-guidelines/materials). The site uses original layouts and SVG illustrations; no assets from these reference sites are copied.
 
 ## Stack and attribution
 

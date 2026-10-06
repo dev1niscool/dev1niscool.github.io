@@ -1,8 +1,12 @@
 import './style.css';
 import { cruises } from './data.js';
 import { createCruiseMap } from './map.js';
+import { createStatisticsPage } from './statistics.js';
+import './theme.css';
 
 const icons = {
+  chart: '<path d="M4 20h16M7 16v-5M12 16V4M17 16V8"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>',
   arrow: '<path d="m14 5-7 7 7 7M7 12h14"/>',
   close: '<path d="m6 6 12 12M18 6 6 18"/>',
@@ -33,16 +37,16 @@ const confidenceLabel = { confirmed:'Historical match', likely:'Likely itinerary
 const years = [...new Set(cruises.map(c => c.year))].sort((a,b)=>a-b);
 const lines = [...new Set(cruises.map(c => c.line))];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const state = {year:null,query:'',line:'',selected:null,newest:true,motion:!reducedMotion.matches,touring:false};
-let tourTimer, map, visible = [], selectedTab = 'itinerary';
+const state = {view:'atlas',year:null,query:'',line:'',selected:null,newest:true,motion:!reducedMotion.matches,touring:false};
+let tourTimer, map, statisticsPage, visible = [], selectedTab = 'itinerary';
 
 document.querySelector('#app').innerHTML = `
   <header class="topbar">
     <a class="brand" href="./" aria-label="Little voyages, reset atlas"><span class="brand-mark">${boat('#fff8e8')}</span><span>little voyages<span class="brand-caption">MY CRUISE ATLAS</span></span></a>
-    <div class="header-tagline">A lifetime of <span>happy departures.</span></div>
-    <div class="top-actions"><button class="motion-button" id="motion" aria-label="Ship animations" aria-pressed="${state.motion}" title="Toggle ship animations">${icon('wave')}<span>Ocean mode</span><i></i></button><span class="action-divider"></span><button class="about-button" id="about">${icon('info')}<span>About the atlas</span></button></div>
+    <nav class="view-nav" aria-label="Main navigation"><button data-view="atlas" aria-current="page">${icon('globe')}<span>Cruise atlas</span></button><button data-view="statistics">${icon('chart')}<span>Statistics</span><i class="nav-sparkle">✦</i></button></nav>
+    <div class="top-actions"><button class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false" aria-label="Dark mode"><span class="theme-toggle-label">Dark mode</span><span class="theme-track">${icon('sun')}${icon('moon')}<i></i></span></button><button class="motion-button" id="motion" aria-label="Animations" aria-pressed="${state.motion}" title="Toggle animations">${icon('wave')}<span>Motion</span><i></i></button><span class="action-divider"></span><button class="about-button" id="about">${icon('info')}<span>About</span></button></div>
   </header>
-  <main class="atlas-layout">
+  <main class="atlas-layout" id="atlas-page" tabindex="-1" aria-label="Cruise atlas">
     <aside class="logbook" aria-label="Cruise logbook">
       <div id="sidebar"></div>
       <div class="sidebar-footer"><span class="tiny-wave">≈</span> Good times. Great tides.</div>
@@ -62,6 +66,7 @@ document.querySelector('#app').innerHTML = `
       <div class="timeline-track"><button id="all-years" class="year-all active" aria-pressed="true">All years<span>${cruises.length} voyages</span></button><div class="year-scroll" id="year-scroll">${years.map(year=>{const count=cruises.filter(c=>c.year===year).length;return `<button class="year-item" data-year="${year}" aria-label="${year}, ${count} voyages" aria-pressed="false"><span class="year-bars">${Array.from({length:count},()=>'<i></i>').join('')}</span><span class="year-number">${year}</span><span class="year-count">${count} ${count===1?'voyage':'voyages'}</span></button>`}).join('')}</div></div>
     </section>
   </main>
+  <main id="statistics-page" hidden tabindex="-1" aria-labelledby="statistics-title"></main>
   <div class="sr-only" id="announcer" role="status" aria-live="polite"></div>
   <dialog id="about-dialog" aria-labelledby="about-title"><button class="dialog-close icon-button" aria-label="Close about dialog">${icon('close')}</button><div class="dialog-boat">${boat()}</div><span class="eyebrow">A PERSONAL PASSPORT TO THE PAST</span><h2 id="about-title">Every voyage has a story.</h2><p>This is a little home for 29 cruises, from your first Bahamian adventure in 2005 to the southern Caribbean in 2025. Pick a year, follow a ship, and revisit a port.</p><div class="about-rule"></div><h3>A note from the logbook</h3><p>Your original ship, date, and destination are preserved. Historical schedules, cruise brochures, passenger reviews, and forum posts help reconstruct the journeys. Some dates may fall within a sailing, rather than on departure day.</p><div class="confidence-guide"><p><span class="confidence confirmed">Historical match</span> A historical source matches the sailing. Individual details can still have notes.</p><p><span class="confidence likely">Likely itinerary</span> The schedule fits, but some details or the full trip length need confirmation.</p><p><span class="confidence unresolved">A little mystery</span> Records conflict or don’t establish a reliable itinerary.</p></div><p>Each voyage has its own research notes and source links. Map lines are illustrative connections between ports, with sea waypoints where available; they are not the ship’s recorded track. Port totals describe the displayed itinerary, not separately verified personal visits.</p><div class="dialog-actions"><button class="primary-button" id="download">${icon('download')} Download logbook</button><a href="https://github.com/dev1niscool/dev1niscool.github.io/tree/main/little-voyages/source" target="_blank" rel="noopener noreferrer">View on GitHub ${icon('external')}</a></div><p class="map-credit">Map: Natural Earth · Fonts: DM Sans & Fraunces · Made for the love of the sea.</p></dialog>
 `;
@@ -107,8 +112,7 @@ function render() {
   document.querySelector('#all-years').classList.toggle('active',!state.year);
   document.querySelector('#all-years').setAttribute('aria-pressed',!state.year);
   document.querySelector('#announcer').textContent=`${visible.length} voyages shown${state.year?` from ${state.year}`:''}${state.selected?`. ${cruises.find(c=>c.id===state.selected)?.ship} selected`:''}.`;
-  const params=new URLSearchParams();if(state.year)params.set('year',state.year);if(state.selected)params.set('cruise',state.selected);
-  history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''));
+  syncUrl();
 }
 function selectCruise(id,fromTour=false) {
   const c=cruises.find(c=>c.id===id);if(!c)return;
@@ -132,13 +136,51 @@ document.querySelector('#zoom-out').addEventListener('click',()=>map.zoomOut());
 document.querySelector('#all-years').addEventListener('click',()=>selectYear(null));
 document.querySelectorAll('[data-year]').forEach(el=>el.addEventListener('click',()=>selectYear(Number(el.dataset.year))));
 document.querySelector('#tour').addEventListener('click',startTour);
-document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();clearFilters()});
+document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();clearFilters();setView('atlas')});
 const dialog=document.querySelector('#about-dialog');
 document.querySelector('#about').addEventListener('click',()=>{stopTour();dialog.showModal()});
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog){const rect=dialog.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)dialog.close()}});
 document.querySelector('#download').addEventListener('click',()=>{const data={title:'Little voyages — My cruise atlas',routeNote:'Illustrative port connections, not recorded navigation tracks.',cruises};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='little-voyages-logbook.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.open){stopTour();state.selected=null;render();map.reset()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.open&&state.view==='atlas'){stopTour();state.selected=null;render();map.reset()}});
 const params=new URLSearchParams(location.search);const year=Number(params.get('year'));if(years.includes(year))state.year=year;
 const id=Number(params.get('cruise'));if(cruises.some(c=>c.id===id&&(!state.year||c.year===state.year)))state.selected=id;
-render();if(state.selected)setTimeout(()=>map.focus(cruises.find(c=>c.id===state.selected)),100);
+statisticsPage=createStatisticsPage(document.querySelector('#statistics-page'),{cruises,onSelectCruise:id=>{Object.assign(state,{year:null,query:'',line:'',selected:Number(id)});setView('atlas');selectCruise(Number(id));},onSelectYear:year=>{Object.assign(state,{query:'',line:''});setView('atlas');selectYear(Number(year));}});
+state.view=params.get('view')==='statistics'?'statistics':'atlas';
+render();setView(state.view,{push:false,scroll:false});
+
+
+function syncUrl(push=false){
+  const params=new URLSearchParams();
+  if(state.view==='statistics')params.set('view','statistics');
+  if(state.year)params.set('year',state.year);
+  if(state.selected)params.set('cruise',state.selected);
+  const url=location.pathname+(params.size?'?'+params.toString():'');
+  if(push&&url!==location.pathname+location.search)history.pushState(null,'',url);
+  else history.replaceState(null,'',url);
+}
+function setView(view,{push=true,scroll=true}={}){
+  stopTour();state.view=view==='statistics'?'statistics':'atlas';
+  const stats=state.view==='statistics';
+  document.querySelector('#atlas-page').hidden=stats;
+  document.body.classList.toggle('view-statistics',stats);
+  document.querySelectorAll('[data-view]').forEach(button=>{if(button.dataset.view===state.view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')});
+  document.title=stats?'By the numbers — Little voyages':'Little voyages — My cruise atlas';
+  if(stats)statisticsPage?.show();else statisticsPage?.hide();
+  syncUrl(push);
+  if(scroll)window.scrollTo({top:0,behavior:'instant'});
+  if(!stats)requestAnimationFrame(()=>{map.update(visible,state.selected);const cruise=cruises.find(c=>c.id===state.selected);if(cruise)map.focus(cruise,false);else map.reset()});
+  document.querySelector('#announcer').textContent=stats?'Statistics page. Your entire cruise collection, by the numbers.':`${visible.length} voyages shown on the cruise atlas.`;
+}
+document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>setView(button.dataset.view)));
+window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);const y=Number(p.get('year')),id=Number(p.get('cruise'));Object.assign(state,{year:years.includes(y)?y:null,query:'',line:'',selected:cruises.some(c=>c.id===id)?id:null});state.view=p.get('view')==='statistics'?'statistics':'atlas';render();setView(state.view,{push:false});});
+const themePreference=matchMedia('(prefers-color-scheme: dark)');
+function setTheme(theme,persist=false){
+  document.documentElement.dataset.theme=theme;
+  document.querySelector('#theme-toggle').setAttribute('aria-checked',theme==='dark');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content',theme==='dark'?'#101a30':'#eff7fa');
+  if(persist)try{localStorage.setItem('little-voyages-theme',theme)}catch{}
+}
+setTheme(document.documentElement.dataset.theme||(themePreference.matches?'dark':'light'));
+document.querySelector('#theme-toggle').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark',true));
+themePreference.addEventListener('change',e=>{let saved=null;try{saved=localStorage.getItem('little-voyages-theme')}catch{}if(!['dark','light'].includes(saved))setTheme(e.matches?'dark':'light');});

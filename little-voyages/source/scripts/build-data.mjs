@@ -36,13 +36,13 @@ const records = [
 ];
 
 const colors = {
-  'Carnival Cruise Line': '#dc7967',
-  'Celebrity Cruises': '#6b80aa',
-  'Disney Cruise Line': '#bd9455',
-  'Norwegian Cruise Line': '#5c9b93',
-  'Princess Cruises': '#9a87b5',
-  'Holland America Line': '#588495',
-  'Royal Caribbean': '#7d9665',
+  'Carnival Cruise Line': '#ef827b',
+  'Celebrity Cruises': '#8674d6',
+  'Disney Cruise Line': '#dca12e',
+  'Norwegian Cruise Line': '#1aaa99',
+  'Princess Cruises': '#b07bd5',
+  'Holland America Line': '#4c9cbf',
+  'Royal Caribbean': '#79a951',
 };
 
 const originalShipNames = {

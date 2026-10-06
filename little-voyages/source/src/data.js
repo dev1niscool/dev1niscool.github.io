@@ -55,7 +55,7 @@ export const cruises = [
         "note": "Section 2.1 gives Thursday Port Canaveral, Friday Nassau, Saturday Castaway Cay, Sunday Port Canaveral."
       }
     ],
-    "color": "#bd9455",
+    "color": "#dca12e",
     "route": [
       [
         -80.6188,
@@ -149,7 +149,7 @@ export const cruises = [
         "note": "Historical established Eastern sequence: Port Canaveral, St. Maarten, St. Thomas, Castaway Cay, Port Canaveral."
       }
     ],
-    "color": "#bd9455",
+    "color": "#dca12e",
     "route": [
       [
         -80.6188,
@@ -263,7 +263,7 @@ export const cruises = [
         "note": "Reproduces the summer 2008 departure list, including August 10, and the Sunday-to-Thursday port order."
       }
     ],
-    "color": "#bd9455",
+    "color": "#dca12e",
     "route": [
       [
         -80.6188,
@@ -348,7 +348,7 @@ export const cruises = [
         "note": "Contemporary account of April 12 sailing corroborates the seasonal Eastern operation."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.1765,
@@ -459,7 +459,7 @@ export const cruises = [
         "note": "Advertisement for a February 2010 Saturday Fascination departure provides day order: Jacksonville, sea, Nassau, Half Moon Cay, sea, Jacksonville; supports the reconstruction rather than exact August calls."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -81.5784,
@@ -551,7 +551,7 @@ export const cruises = [
         "note": "2010 passenger account corroborates continued Half Moon Cay Eastern itinerary."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.1765,
@@ -640,7 +640,7 @@ export const cruises = [
         "note": "Dated ship photograph independently places Carnival Freedom in Port Everglades on January 15, 2011."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.1159,
@@ -811,7 +811,7 @@ export const cruises = [
         "note": "Distinguishes Oosterdam's Glacier Bay route from Westerdam's Hubbard Glacier route in 2011."
       }
     ],
-    "color": "#588495",
+    "color": "#4c9cbf",
     "route": [
       [
         -122.3795,
@@ -1037,7 +1037,7 @@ export const cruises = [
         "note": "Nearby March 4 sailing account corroborates ordered Galveston, Montego Bay, Grand Cayman, Cozumel route; not the exact February departure."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -94.7927,
@@ -1164,7 +1164,7 @@ export const cruises = [
         "note": "Contemporary June 2013 account corroborates the June 7 sailing and first-season refurbishment context."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         2.1688,
@@ -1308,7 +1308,7 @@ export const cruises = [
         "note": "Contemporary post describes Elation's four-night Cozumel and five-night Western Caribbean cruises."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -90.0602,
@@ -1418,7 +1418,7 @@ export const cruises = [
         "note": "Confirms the preceding sailing was Western, supporting the one-day date discrepancy rather than an Eastern voyage on March 15."
       }
     ],
-    "color": "#7d9665",
+    "color": "#79a951",
     "route": [
       [
         -80.1159,
@@ -1516,7 +1516,7 @@ export const cruises = [
         "note": "First-hand contemporary album explicitly lists dates and all ordered ports."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         11.7878,
@@ -1748,7 +1748,7 @@ export const cruises = [
         "note": "Exact departure, seven-night duration, San Juan roundtrip and ordered ports."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         -66.1107,
@@ -1864,7 +1864,7 @@ export const cruises = [
         "note": "February 2015 passenger planning post explicitly names the May 28 Stockholm–Amsterdam sailing and two-day St. Petersburg visit."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         18.0903,
@@ -2142,7 +2142,7 @@ export const cruises = [
         "note": "Identifies March 19, 2016 as the beginning of post-refurbishment sailings."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         -66.1107,
@@ -2275,7 +2275,7 @@ export const cruises = [
         "note": "Passenger explicitly states July 13 twelve-day Amsterdam British Isles roundtrip."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         4.9215,
@@ -2518,7 +2518,7 @@ export const cruises = [
         "note": "Verified review confirms departure, duration and ordered ports."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.6188,
@@ -2594,7 +2594,7 @@ export const cruises = [
         "note": "Exact departure, three-night duration, Port Canaveral roundtrip and Nassau."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.6188,
@@ -2699,7 +2699,7 @@ export const cruises = [
         "note": "Promotional brochure separately identifies Reflection's six-night August 15, 2018 departure."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         11.7878,
@@ -2838,7 +2838,7 @@ export const cruises = [
         "note": "Specifically identifies Norwegian Sun, rather than Sky, as diverted from its June 5 Havana call."
       }
     ],
-    "color": "#5c9b93",
+    "color": "#1aaa99",
     "route": [
       [
         -80.1765,
@@ -2925,7 +2925,7 @@ export const cruises = [
         "note": "Same season's seven-night route and ports, useful corroboration but not the exact departure."
       }
     ],
-    "color": "#9a87b5",
+    "color": "#b07bd5",
     "route": [
       [
         23.6275,
@@ -3104,7 +3104,7 @@ export const cruises = [
         "note": "Separate passenger corroborates exact departure, four nights and both stops."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.6188,
@@ -3194,7 +3194,7 @@ export const cruises = [
         "note": "Exact-date sailing review corroborates Eastern Caribbean designation."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.6188,
@@ -3288,7 +3288,7 @@ export const cruises = [
         "note": "Historical schedule for June 11–18: Barcelona, Gibraltar, Marseille, Genoa, Livorno and Civitavecchia. Published as the first week of a longer itinerary; the owner confirms sailing the seven-day voyage."
       }
     ],
-    "color": "#9a87b5",
+    "color": "#b07bd5",
     "route": [
       [
         2.1688,
@@ -3444,7 +3444,7 @@ export const cruises = [
         "note": "Same-departure Western Caribbean passenger review."
       }
     ],
-    "color": "#5c9b93",
+    "color": "#1aaa99",
     "route": [
       [
         -80.1765,
@@ -3574,7 +3574,7 @@ export const cruises = [
         "note": "March 18 departure advertised Catalina and Cabo, supporting interpretation of anchor as return date."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         -118.277,
@@ -3735,7 +3735,7 @@ export const cruises = [
         "note": "Full corrected route, dates and overnight calls."
       }
     ],
-    "color": "#6b80aa",
+    "color": "#8674d6",
     "route": [
       [
         139.6489,
@@ -4009,7 +4009,7 @@ export const cruises = [
         "note": "Specifically identifies June 7 Mardi Gras sailing's substitution of Amber Cove for Grand Turk."
       }
     ],
-    "color": "#dc7967",
+    "color": "#ef827b",
     "route": [
       [
         -80.6188,
