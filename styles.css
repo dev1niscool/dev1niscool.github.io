@@ -115,6 +115,15 @@ main, footer { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 .favorite-key > span { color: #ffd83f; font-family: Arial, sans-serif; font-size: 23px; line-height: 1; -webkit-text-stroke: 1px #d99a0b; filter: drop-shadow(0 2px 3px rgba(157,99,0,.2)); transform: rotate(-8deg); }
 .favorite-key p { margin: 0; font-size: 12px; letter-spacing: .01em; }.favorite-key strong { color: #62511b; }
 
+.preview-vestibular { background: radial-gradient(circle at 84% 12%, rgba(111,136,116,.2), transparent 34%), radial-gradient(circle at 12% 88%, rgba(216,222,205,.6), transparent 38%), linear-gradient(145deg, #f5f5f0, #e8ece4); }
+.vestibular-panel { width: 82%; max-width: 378px; padding: 20px 21px 16px; border: 1px solid rgba(255,255,255,.88); border-radius: 19px; color: #252a25; background: rgba(255,255,252,.8); box-shadow: 0 24px 54px rgba(65,78,66,.16); backdrop-filter: blur(15px); transform: rotate(-1deg); }
+.vestibular-head { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 3px 0 11px; }
+.vestibular-head strong { font-family: Georgia, serif; font-size: 25px; font-weight: 400; line-height: 1; letter-spacing: -.055em; }.vestibular-head strong span { color: #56725d; }
+.vestibular-mark { position: relative; display: block; width: 24px; height: 24px; border: 1px solid #6a7b6e; border-radius: 50%; }.vestibular-mark::before { content: ""; position: absolute; inset: 4px; border: 1px solid #c5cdc4; border-radius: 50%; }.vestibular-mark i { position: absolute; inset: 9px; border-radius: 50%; background: #56725d; }
+.vestibular-panel > p { margin: 2px 0 11px; text-align: center; color: #697169; font-size: 7px; }
+.vestibular-menu { border-top: 1px solid #dfe2dd; }.vestibular-menu > span { display: flex; align-items: center; justify-content: space-between; min-height: 37px; border-bottom: 1px solid #dfe2dd; }.vestibular-menu b { font-family: Georgia, serif; font-size: 14px; font-weight: 400; letter-spacing: -.035em; }.vestibular-menu i { color: #56665a; font-size: 10px; font-style: normal; }
+.vestibular-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; color: #7b817b; font-size: 6px; }.vestibular-foot small { font-size: 6px; }
+
 .preview-tailor { background: radial-gradient(circle at 84% 14%, rgba(184,205,117,.44), transparent 34%), radial-gradient(circle at 12% 88%, rgba(222,230,191,.7), transparent 38%), linear-gradient(145deg, #f5f5ef, #e8eddf); }
 .tailor-panel { width: 82%; max-width: 378px; padding: 18px 20px; border: 1px solid rgba(255,255,255,.9); border-radius: 19px; color: #292d26; background: rgba(255,255,252,.76); box-shadow: 0 24px 54px rgba(70,82,52,.16); backdrop-filter: blur(15px); transform: rotate(-1deg); }
 .tailor-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 11px; border-bottom: 1px solid rgba(67,78,51,.11); }.tailor-head > span { display: flex; align-items: center; gap: 2px; font-size: 11px; }.tailor-head > span i { display: grid; place-items: center; width: 22px; height: 22px; margin-right: 5px; border-radius: 7px; color: #bdd776; background: #30352b; font-size: 13px; font-style: normal; }.tailor-head > span b { font-weight: 800; }.tailor-head small { display: flex; align-items: center; gap: 5px; color: #7f8975; font-size: 6px; font-weight: 700; letter-spacing: .1em; }.tailor-head small i { width: 5px; height: 5px; border-radius: 50%; background: #95ad50; }
@@ -314,7 +323,7 @@ footer > a:last-child { font-weight: 700; color: #5b6382; }
   .pupil-gauge::before { width: 68px; height: 68px; }
   .pupil-gauge span { width: 36px; height: 36px; }
   .market-panel { width: 88%; }
-  .tailor-panel, .messages-panel, .gsb-panel, .voyages-panel, .spotify-panel, .mri-panel, .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
+  .vestibular-panel, .tailor-panel, .messages-panel, .gsb-panel, .voyages-panel, .spotify-panel, .mri-panel, .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
   .mri-body { grid-template-columns: 100px minmax(0,1fr); gap: 12px; }
   .mri-scan { width: 96px; height: 96px; }.mri-scan i { top: 47px; }.mri-scan b { left: 47px; }
   .scanner-panel { width: 88%; padding: 17px; }
