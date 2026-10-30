@@ -115,6 +115,15 @@ main, footer { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
 .favorite-key > span { color: #ffd83f; font-family: Arial, sans-serif; font-size: 23px; line-height: 1; -webkit-text-stroke: 1px #d99a0b; filter: drop-shadow(0 2px 3px rgba(157,99,0,.2)); transform: rotate(-8deg); }
 .favorite-key p { margin: 0; font-size: 12px; letter-spacing: .01em; }.favorite-key strong { color: #62511b; }
 
+.preview-m2ordle { background: radial-gradient(circle at 50% 20%, rgba(97,57,142,.28), transparent 40%), linear-gradient(160deg, #100b1c, #040309 72%); }
+.m2ordle-panel { position: relative; width: 82%; max-width: 378px; min-height: 218px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(141,105,190,.25); border-radius: 18px; color: #faf8ff; background: linear-gradient(180deg, rgba(10,7,18,.94), rgba(8,5,15,.88)); box-shadow: 0 24px 54px rgba(3,2,8,.48), inset 0 0 38px rgba(68,34,108,.13); transform: rotate(-1deg); }
+.m2ordle-stars { position: absolute; inset: 0; }.m2ordle-stars i { position: absolute; width: 2px; height: 2px; background: #8e839d; }.m2ordle-stars i:nth-child(1) { left: 12%; top: 18%; }.m2ordle-stars i:nth-child(2) { left: 32%; top: 34%; }.m2ordle-stars i:nth-child(3) { right: 18%; top: 16%; }.m2ordle-stars i:nth-child(4) { right: 8%; top: 44%; }.m2ordle-stars i:nth-child(5) { left: 18%; top: 67%; }
+.m2ordle-logo { position: relative; z-index: 2; font-family: monospace; font-size: 37px; font-weight: 800; line-height: 1; letter-spacing: -.1em; text-shadow: 0 6px 20px rgba(148,85,210,.18); }.m2ordle-logo b { color: #ddff66; }.m2ordle-logo span { color: #f6f1fb; }
+.m2ordle-subtitle { position: relative; z-index: 2; margin: 12px 0 15px; font-family: monospace; font-size: 8px; letter-spacing: .03em; }
+.m2ordle-play { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 10px; min-width: 118px; padding: 11px 15px; border: 2px solid #09060f; outline: 1px solid #ddff66; color: #0b0711; background: #ddff66; font-family: monospace; font-size: 11px; box-shadow: 0 5px 0 rgba(62,42,88,.42); }.m2ordle-play i { font-size: 9px; font-style: normal; }
+.m2ordle-nav { position: relative; z-index: 2; display: flex; gap: 13px; margin-top: 17px; font-family: monospace; font-size: 6px; }.m2ordle-nav span { white-space: nowrap; }
+.m2ordle-grid { position: absolute; z-index: 1; left: -10%; right: -10%; bottom: -42px; height: 82px; opacity: .3; background: linear-gradient(rgba(99,56,143,.28) 1px, transparent 1px), linear-gradient(90deg, rgba(99,56,143,.28) 1px, transparent 1px); background-size: 25px 15px; transform: perspective(90px) rotateX(44deg); transform-origin: bottom; }
+
 .preview-switch { background: radial-gradient(circle at 84% 12%, rgba(104,91,255,.42), transparent 35%), radial-gradient(circle at 12% 90%, rgba(80,69,205,.24), transparent 40%), linear-gradient(145deg, #252a31, #12151b); }
 .switch-panel { width: 82%; max-width: 378px; padding: 17px 19px; border: 1px solid rgba(121,111,255,.28); border-radius: 18px; color: #f1f2f5; background: rgba(24,27,34,.9); box-shadow: 0 24px 54px rgba(4,6,12,.42); transform: rotate(-1deg); }
 .switch-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(122,128,145,.17); }.switch-head strong { font-family: "Manrope", sans-serif; font-size: 16px; letter-spacing: -.04em; }.switch-head small { padding: 4px 6px; border-radius: 5px; color: #a89fff; background: rgba(102,91,255,.12); font-size: 6px; font-weight: 700; letter-spacing: .12em; }
@@ -333,7 +342,7 @@ footer > a:last-child { font-weight: 700; color: #5b6382; }
   .pupil-gauge::before { width: 68px; height: 68px; }
   .pupil-gauge span { width: 36px; height: 36px; }
   .market-panel { width: 88%; }
-  .switch-panel, .vestibular-panel, .tailor-panel, .messages-panel, .gsb-panel, .voyages-panel, .spotify-panel, .mri-panel, .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
+  .m2ordle-panel, .switch-panel, .vestibular-panel, .tailor-panel, .messages-panel, .gsb-panel, .voyages-panel, .spotify-panel, .mri-panel, .stremio-panel, .clearpage-panel, .inde-panel { width: 88%; padding: 17px; }
   .mri-body { grid-template-columns: 100px minmax(0,1fr); gap: 12px; }
   .mri-scan { width: 96px; height: 96px; }.mri-scan i { top: 47px; }.mri-scan b { left: 47px; }
   .scanner-panel { width: 88%; padding: 17px; }
