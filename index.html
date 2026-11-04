@@ -24,6 +24,16 @@
     />
     <meta name="twitter:image" content="https://dev1niscool.github.io/og.png" />
     <title>Devin Kancherla — Selected Work</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('portfolio-theme');
+          document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
     <link rel="shortcut icon" href="./favicon.ico?v=2" />
     <link rel="icon" type="image/png" sizes="32x32" href="./devin-headshot-32.png?v=2" />
     <link rel="icon" type="image/png" sizes="192x192" href="./devin-headshot-192.png?v=2" />
@@ -35,8 +45,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20261104" />
+    <script src="./script.js?v=20261104" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#work">Skip to projects</a>
@@ -54,34 +64,56 @@
         <span class="brand-name">Devin Kancherla</span>
       </a>
 
-      <a
-        class="github-link"
-        href="https://github.com/dev1niscool"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <span class="gh-mark" aria-hidden="true">GH</span>
-        <span>GitHub</span>
-      </a>
+      <div class="header-actions">
+        <button
+          class="header-control favorites-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Show favorite projects only"
+          aria-controls="project-grid"
+        >
+          <span class="control-icon favorites-icon" aria-hidden="true">★</span>
+          <span class="control-label">Favorites</span>
+        </button>
+        <button
+          class="header-control theme-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Switch to dark mode"
+        >
+          <span class="control-icon theme-icon" aria-hidden="true">☾</span>
+          <span class="control-label">Dark</span>
+        </button>
+        <a
+          class="github-link"
+          href="https://github.com/dev1niscool"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="gh-mark" aria-hidden="true">GH</span>
+          <span>GitHub</span>
+        </a>
+      </div>
     </header>
 
     <main id="top">
       <section class="projects-section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
           <h1 id="work-title">Projects</h1>
+          <p class="sr-only" id="project-filter-status" aria-live="polite"></p>
         </div>
 
-        <div class="project-grid">
+        <div class="project-grid" id="project-grid">
           <article class="project-card glass reveal-card">
             <a
               class="project-preview preview-bioage"
               href="https://dev1niscool.github.io/BioBloodAge/"
               target="_blank"
               rel="noreferrer"
-              aria-label="Open Bio Blood Age research calculator"
+              aria-label="Open Biological Age Blood Estimate research calculator"
             >
               <div class="bioage-panel" aria-hidden="true">
-                <div class="bioage-head"><span><i>b.</i><b>Bio Blood Age</b></span><small><i></i> PRIVATE BY DESIGN</small></div>
+                <div class="bioage-head"><span><i>b.</i><b>Biological Age Blood Estimate</b></span><small><i></i> PRIVATE BY DESIGN</small></div>
                 <div class="bioage-body">
                   <div class="bioage-copy">
                     <small>YOUR BLOOD WORK, IN PERSPECTIVE</small>
@@ -98,8 +130,8 @@
               <div class="project-number">01</div>
               <div class="project-copy">
                 <div class="project-title-line">
-                  <h3>Bio Blood Age</h3>
-                  <a class="arrow-link" href="https://dev1niscool.github.io/BioBloodAge/" target="_blank" rel="noreferrer" aria-label="Visit Bio Blood Age research calculator">↗</a>
+                  <h3>Biological Age Blood Estimate</h3>
+                  <a class="arrow-link" href="https://dev1niscool.github.io/BioBloodAge/" target="_blank" rel="noreferrer" aria-label="Visit Biological Age Blood Estimate research calculator">↗</a>
                 </div>
                 <p>A private, browser-local calculator comparing five research-based mortality-risk-equivalent age estimates from routine health data.</p>
                 <div class="tag-list"><span>Health research</span><span>Five clocks</span><span>JavaScript</span></div>
